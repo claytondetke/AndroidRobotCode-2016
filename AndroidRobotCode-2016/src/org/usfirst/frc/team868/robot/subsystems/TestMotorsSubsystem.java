@@ -15,9 +15,9 @@ public class TestMotorsSubsystem extends Subsystem {
 	private Victor wheel3;
 	
 	private TestMotorsSubsystem(){
-		wheel = new Victor(RobotMap.RIGHT_DRIVE_MOTOR);
-		wheel2 = new Victor(RobotMap.BACK_RIGHT_SHOOTER);
-		wheel3 = new Victor(RobotMap.BACK_LEFT_SHOOTER);
+		wheel = new Victor(RobotMap.COLLECTOR);
+		wheel2 = new Victor(RobotMap.BACK_LEFT_SHOOTER);
+		wheel3 = new Victor(RobotMap.BACK_RIGHT_SHOOTER);
 	}
 	
 	public void setPower(double speed){

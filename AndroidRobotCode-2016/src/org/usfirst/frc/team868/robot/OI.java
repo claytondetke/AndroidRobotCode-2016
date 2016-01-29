@@ -52,13 +52,14 @@ public class OI {
 	}
 	
 	public void initSmartDashboard(){
-		SmartDashboard.putData("1", new TestMotorsCommand(1, .3));
-		SmartDashboard.putData("2", new TestMotorsCommand(2, .3));
-		SmartDashboard.putData("3", new TestMotorsCommand(3, .3));
-		SmartDashboard.putData("4", new TestMotorsCommand(4, .3));
-		SmartDashboard.putData("5", new TestMotorsCommand(5, .3));
-		SmartDashboard.putData("6", new TestMotorsCommand(6, .3));
-		SmartDashboard.putData("7", new TestMotorsCommand(7, .3));
+		SmartDashboard.putData("Drive_Forward", new TestMotorsCommand(.3));
+		SmartDashboard.putData("Right_Drive(1)", new TestMotorsCommand(1, .3));
+		SmartDashboard.putData("Left_Drive(2)", new TestMotorsCommand(2, -.3));
+		SmartDashboard.putData("Front_Right_Shooter(3)", new TestMotorsCommand(3, .3));
+		SmartDashboard.putData("Back_Left_Shooter(4)", new TestMotorsCommand(4, .3));
+		SmartDashboard.putData("Back_Right_Shooter(5)", new TestMotorsCommand(5, .3));
+		SmartDashboard.putData("Front_Left_Shooter(6)", new TestMotorsCommand(6, -.3));
+		SmartDashboard.putData("Collector(7)", new TestMotorsCommand(7, -.3));
 	}
 }
 
