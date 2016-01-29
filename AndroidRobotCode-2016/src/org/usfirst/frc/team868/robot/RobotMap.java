@@ -6,6 +6,9 @@ package org.usfirst.frc.team868.robot;
  * floating around.
  */
 public class RobotMap {
+	
+	public static int WHEEL;
+	//motor 1 drive 1a left side = port 2
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;

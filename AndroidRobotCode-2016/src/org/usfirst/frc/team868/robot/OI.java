@@ -1,13 +1,18 @@
 package org.usfirst.frc.team868.robot;
 
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc.team868.robot.commands.ExampleCommand;
+import org.usfirst.frc.team868.robot.commands.TestMotorsCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	
+	private static OI instance;
 	
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
@@ -35,5 +40,28 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+	
+	public OI(){
+		initSmartDashboard();
+	}
+	
+	public static OI getInstance(){
+		if(instance == null){
+			instance = new OI();
+		}
+		return instance;
+	}
+	
+	public void initSmartDashboard(){
+		SmartDashboard.putData("1", new TestMotorsCommand(1, .3));
+		SmartDashboard.putData("2", new TestMotorsCommand(2, .3));
+		SmartDashboard.putData("3", new TestMotorsCommand(3, .3));
+		SmartDashboard.putData("4", new TestMotorsCommand(4, .3));
+		SmartDashboard.putData("5", new TestMotorsCommand(5, .3));
+		SmartDashboard.putData("6", new TestMotorsCommand(6, .3));
+		SmartDashboard.putData("7", new TestMotorsCommand(7, .3));
+		SmartDashboard.putData("8", new TestMotorsCommand(8, .3));
+		SmartDashboard.putData("9", new TestMotorsCommand(9, .3));
+	}
 }
 
