@@ -11,13 +11,27 @@ public class TestMotorsSubsystem extends Subsystem {
     
 	private static TestMotorsSubsystem instance;
 	private Victor wheel;
+	private Victor wheel2;
+	private Victor wheel3;
 	
 	private TestMotorsSubsystem(){
-		wheel = new Victor(RobotMap.WHEEL);
+		wheel = new Victor(RobotMap.RIGHT_DRIVE_MOTOR);
+		wheel2 = new Victor(RobotMap.BACK_RIGHT_SHOOTER);
+		wheel3 = new Victor(RobotMap.BACK_LEFT_SHOOTER);
 	}
 	
 	public void setPower(double speed){
 		wheel.set(speed);
+	}
+	
+	public void setMultiPower(int select, double speed){
+		if(select == 4){
+			wheel2.set(speed);
+		}else if(select == 5){
+			wheel3.set(speed);
+		}else{
+			wheel.set(speed);
+		}
 	}
 	
     // Put methods for controlling this subsystem

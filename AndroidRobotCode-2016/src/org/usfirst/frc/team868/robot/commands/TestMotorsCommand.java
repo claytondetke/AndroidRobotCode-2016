@@ -10,17 +10,29 @@ import edu.wpi.first.wpilibj.command.Command;
 public class TestMotorsCommand extends Command {
 
     public TestMotorsSubsystem test;
-    public double power;
+    public double power = 0;
+    public double speed = 0;
+    public int port = 0;
     
     public TestMotorsCommand(int port, double power){
     	test = TestMotorsSubsystem.getInstance();
     	requires(test);
+    	this.port = port;
     	this.power = power;
+    }
+    
+    public TestMotorsCommand(double speed){
+    	test = TestMotorsSubsystem.getInstance();
+    	requires(test);
+    	this.speed = speed;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	test.setPower(power);
+    	if(port != 0)
+    		test.setMultiPower(port, speed);
+    	else
+    		test.setPower(speed);
     }
 
     // Called repeatedly when this Command is scheduled to run

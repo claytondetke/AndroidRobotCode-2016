@@ -3,7 +3,6 @@ package org.usfirst.frc.team868.robot;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team868.robot.commands.ExampleCommand;
 import org.usfirst.frc.team868.robot.commands.TestMotorsCommand;
 
 /**
@@ -60,8 +59,6 @@ public class OI {
 		SmartDashboard.putData("5", new TestMotorsCommand(5, .3));
 		SmartDashboard.putData("6", new TestMotorsCommand(6, .3));
 		SmartDashboard.putData("7", new TestMotorsCommand(7, .3));
-		SmartDashboard.putData("8", new TestMotorsCommand(8, .3));
-		SmartDashboard.putData("9", new TestMotorsCommand(9, .3));
 	}
 }
 
