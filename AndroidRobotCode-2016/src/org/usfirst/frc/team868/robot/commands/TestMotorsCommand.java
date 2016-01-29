@@ -1,6 +1,5 @@
 package org.usfirst.frc.team868.robot.commands;
 
-import org.usfirst.frc.team868.robot.RobotMap;
 import org.usfirst.frc.team868.robot.subsystems.TestMotorsSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -12,7 +11,6 @@ public class TestMotorsCommand extends Command {
 
     public TestMotorsSubsystem test;
     public double power;
-    public int port;
     
     public TestMotorsCommand(int port, double power){
     	test = TestMotorsSubsystem.getInstance();
@@ -22,7 +20,6 @@ public class TestMotorsCommand extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	RobotMap.WHEEL = port;
     	test.setPower(power);
     }
 
