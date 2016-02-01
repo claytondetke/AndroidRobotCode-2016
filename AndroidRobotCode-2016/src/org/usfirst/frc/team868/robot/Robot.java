@@ -20,17 +20,17 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 
     Command autonomousCommand;
-    RobotDrive tankDrive;
-    Joystick leftJoy, rightJoy;
+   /* RobotDrive tankDrive;
+    Joystick leftJoy, rightJoy;*/
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
 		oi = new OI();
-		tankDrive = new RobotDrive(1, 2, 3, 4);
+		/*tankDrive = new RobotDrive(1, 2, 3, 4);
 		leftJoy = new Joystick(1);
-		rightJoy = new Joystick(2);
+		rightJoy = new Joystick(2);*/
         // instantiate the command used for the autonomous period
         //autonomousCommand = new ExampleCommand();------------------------------------------------------------!!!!!!!!!!!!
     }
