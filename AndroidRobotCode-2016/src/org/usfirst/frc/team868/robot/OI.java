@@ -1,6 +1,5 @@
 package org.usfirst.frc.team868.robot;
 
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team868.robot.commands.TestMotorsCommand;
