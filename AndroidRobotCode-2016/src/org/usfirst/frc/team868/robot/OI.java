@@ -51,7 +51,6 @@ public class OI {
 	}
 	
 	public void initSmartDashboard(){
-		SmartDashboard.putData("Drive_Forward", new TestMotorsCommand(.3));
 		SmartDashboard.putData("Toggle_Collector", new CollectorCommand());
 	}
 }
