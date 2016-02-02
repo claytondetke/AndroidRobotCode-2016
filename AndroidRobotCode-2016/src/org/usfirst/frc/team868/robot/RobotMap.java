@@ -15,9 +15,18 @@ public class RobotMap {
 	public static final int FRONT_LEFT_SHOOTER 	 = 6;//negative direction
 	public static final int COLLECTOR 			 = 7;//negative direction
 	
+	public static final boolean RIGHT_DRIVE_MOTOR_INVERTED    = false;
+	public static final boolean LEFT_DRIVE_MOTOR_INVERTED     = true;
+	public static final boolean FRONT_RIGHT_SHOOTER_INVERTED  = false;
+	public static final boolean BACK_LEFT_SHOOTER_INVERTED    = true;
+	public static final boolean BACK_RIGHT_SHOOTER_INVERTED   = false;
+	public static final boolean FRONT_LEFT_SHOOTER_INVERTED   = true;
 	
-	public static final int COLLECTOR_SOLENOID_1 = 2;
-	public static final int COLLECTOR_SOLENOID_2 = 3;
+	public static final int COLLECTOR_OPENER_SOLENOID = 1;
+	public static final int COLLECTOR_CLOSER_SOLENOID = 5;
+	public static final int COLLECTOR_POPPER_SOLENOID = 4;
+	public static final int SHOOTER_STOPPER_SOLENOID = 2;
+	
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;
