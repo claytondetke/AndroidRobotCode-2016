@@ -7,14 +7,17 @@ package org.usfirst.frc.team868.robot;
  */
 public class RobotMap {
 	
-	public static final int RIGHT_DRIVE_MOTOR   = 1;
-	public static final int LEFT_DRIVE_MOTOR    = 2; //negative direction
-	public static final int FRONT_RIGHT_SHOOTER = 3;
-	public static final int BACK_LEFT_SHOOTER   = 4; //------------wire problem
-	public static final int BACK_RIGHT_SHOOTER  = 5; //-------------wire problem
-	public static final int FRONT_LEFT_SHOOTER  = 6; //negative direction
-	public static final int COLLECTOR           = 7; //negative direction
-
+	public static final int RIGHT_DRIVE_MOTOR	 = 1;
+	public static final int LEFT_DRIVE_MOTOR 	 = 2;//negative direction
+	public static final int FRONT_RIGHT_SHOOTER  = 3;
+	public static final int BACK_LEFT_SHOOTER 	 = 4;//------------wire problem
+	public static final int BACK_RIGHT_SHOOTER 	 = 5;//-------------wire problem
+	public static final int FRONT_LEFT_SHOOTER 	 = 6;//negative direction
+	public static final int COLLECTOR 			 = 7;//negative direction
+	
+	
+	public static final int COLLECTOR_SOLENOID_1 = 2;
+	public static final int COLLECTOR_SOLENOID_2 = 3;
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;
