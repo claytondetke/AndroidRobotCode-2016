@@ -4,12 +4,14 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * Designed to be extended by an abstract, which is extended by actual
  */
 public abstract class MotorSubsystem extends Subsystem {
 
-	protected boolean isInverted; //set by constructor
-	protected int     MOTOR_PORT; //set by constructor
+	protected boolean isInverted; //set by actual constructor
+	protected int     MOTOR_PORT; //set by actual constructor
+	protected int     powerMin;   //set by abstract constructor
+	protected int     powerMax;   //set by abstract constructor
 	protected Victor  driveMotor; //set by super method (see below)
 
 	protected static MotorSubsystem instance; //cannot have abstract getInstance method!
@@ -19,8 +21,8 @@ public abstract class MotorSubsystem extends Subsystem {
     }
     
     public void setPower(double power) {
-    	power = Math.max(power, 1);
-    	power = Math.min(power, -1);
+    	power = Math.max(power, powerMax);
+    	power = Math.min(power, powerMin);
     	driveMotor.set(power);
     }
     
