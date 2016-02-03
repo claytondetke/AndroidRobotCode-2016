@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class ShooterMotorSubsystem extends MotorSubsystem {
+public abstract class ShooterMotorSubsystem extends MotorSubsystem {
     
 	protected ShooterMotorSubsystem() {
 		powerMin = 0;

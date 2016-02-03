@@ -2,6 +2,7 @@ package org.usfirst.frc.team868.robot.subsystems;
 
 import org.usfirst.frc.team868.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -11,7 +12,7 @@ public class BackLeftShooterMotorSubsystem extends ShooterMotorSubsystem {
     
     public BackLeftShooterMotorSubsystem() {
     	isInverted = RobotMap.BACK_LEFT_SHOOTER_INVERTED;
-    	MOTOR_PORT = RobotMap.BACK_LEFT_SHOOTER;
+    	driveMotor = new Victor(RobotMap.BACK_LEFT_SHOOTER);
     }
     
     public static MotorSubsystem getInstance() {
@@ -20,5 +21,11 @@ public class BackLeftShooterMotorSubsystem extends ShooterMotorSubsystem {
     	}
     	return instance;
     }
+
+	@Override
+	public void initDefaultCommand() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 

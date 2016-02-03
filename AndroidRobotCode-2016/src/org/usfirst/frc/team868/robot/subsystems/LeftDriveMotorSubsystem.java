@@ -2,6 +2,8 @@ package org.usfirst.frc.team868.robot.subsystems;
 
 import org.usfirst.frc.team868.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.Victor;
+
 /**
  *
  */
@@ -12,7 +14,7 @@ public class LeftDriveMotorSubsystem extends DriveMotorSubsystem {
 
 	public LeftDriveMotorSubsystem() { //constructor to set default values
 		isInverted = RobotMap.LEFT_DRIVE_MOTOR_INVERTED;
-		MOTOR_PORT = RobotMap.LEFT_DRIVE_MOTOR;
+		driveMotor = new Victor(RobotMap.LEFT_DRIVE_MOTOR);
 	}
 	
     public static MotorSubsystem getInstance() {
@@ -22,5 +24,11 @@ public class LeftDriveMotorSubsystem extends DriveMotorSubsystem {
     	
     	return instance;
     }
+
+	@Override
+	public void initDefaultCommand() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
