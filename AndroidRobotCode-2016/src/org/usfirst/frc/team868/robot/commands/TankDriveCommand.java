@@ -32,7 +32,6 @@ public class TankDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-
     	leftSpeed = tankDrive.getRawAxis(1);
     	rightSpeed = tankDrive.getRawAxis(3);
     	leftMotor.setPower(leftSpeed);

@@ -15,7 +15,7 @@ public class RightDriveCommand extends Command {
 	public double rightSpeed;
 
     public RightDriveCommand(double power) {
-    	driveMotor=(RightDriveMotorSubsystem) RightDriveMotorSubsystem.getInstance();
+    	driveMotor = new RightDriveMotorSubsystem();
     	requires(driveMotor);
     	this.power=power;
         // Use requires() here to declare subsystem dependencies

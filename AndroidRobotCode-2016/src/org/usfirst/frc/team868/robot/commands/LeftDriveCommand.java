@@ -9,13 +9,14 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class LeftDriveCommand extends Command {
+
 	private LeftDriveMotorSubsystem driveMotor;
 	private double power = 0;
 	public Joystick tankDrive = new Joystick(0);
 	public double leftSpeed;
 
     public LeftDriveCommand(double power) {
-    	driveMotor=(LeftDriveMotorSubsystem) LeftDriveMotorSubsystem.getInstance();
+    	driveMotor = new LeftDriveMotorSubsystem();
     	requires(driveMotor);
     	this.power=power;
         // Use requires() here to declare subsystem dependencies

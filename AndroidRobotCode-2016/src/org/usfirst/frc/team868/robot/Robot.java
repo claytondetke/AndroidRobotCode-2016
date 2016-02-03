@@ -57,7 +57,6 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-    	new TankDriveCommand();
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
@@ -73,6 +72,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	new TankDriveCommand();
         Scheduler.getInstance().run();
     }
     

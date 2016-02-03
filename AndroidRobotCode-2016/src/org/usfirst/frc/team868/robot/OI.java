@@ -52,11 +52,11 @@ public class OI {
 	
 	public void initSmartDashboard(){
 		SmartDashboard.putData("Toggle_Collector", new CollectorCommand());
-		SmartDashboard.putData("LeftDriveForward", new LeftDriveCommand(0.1));
+/*		SmartDashboard.putData("LeftDriveForward", new LeftDriveCommand(0.1));
 		SmartDashboard.putData("LeftDriveBackward", new LeftDriveCommand(-0.1));
 		SmartDashboard.putData("RightDriveForward", new RightDriveCommand(0.1));
 		SmartDashboard.putData("RightDriveBackward", new RightDriveCommand(-0.1));
-		SmartDashboard.putData("DriveForward", new DriveCommand());
+*/		SmartDashboard.putData("DriveForward", new DriveCommand());
 	}
 }
 
