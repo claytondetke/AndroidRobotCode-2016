@@ -1,13 +1,12 @@
 
 package org.usfirst.frc.team868.robot;
 
-import org.usfirst.frc.team868.robot.commands.LeftDriveCommand;
-import org.usfirst.frc.team868.robot.commands.RightDriveCommand;
-import org.usfirst.frc.team868.robot.commands.TankDriveCommand;
+import org.usfirst.frc.team868.robot.commands.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -25,6 +24,7 @@ public class Robot extends IterativeRobot {
 
     Command autonomousCommand;
     public Joystick tankDrive = new Joystick(0);
+    public JoystickButton X = new JoystickButton(tankDrive, 1);//Toggles collector to open and closed.
 	public LeftDriveCommand leftSpeed;
 	public RightDriveCommand rightSpeed;
     /**
@@ -33,7 +33,6 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
-    	new TankDriveCommand();
         // instantiate the command used for the autonomous period
     }
 	
@@ -42,6 +41,7 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
+    	new DriveCommand();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
     }
@@ -73,6 +73,8 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	X.toggleWhenPressed(new CollectorCommand());
+    	
         Scheduler.getInstance().run();
     }
     

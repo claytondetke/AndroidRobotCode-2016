@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.Victor;
  */
 public class RightDriveMotorSubsystem extends DriveMotorSubsystem {
     
+	public static RightDriveMotorSubsystem instance;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -16,7 +17,7 @@ public class RightDriveMotorSubsystem extends DriveMotorSubsystem {
 		isInverted = RobotMap.RIGHT_DRIVE_MOTOR_INVERTED;
 	}
 	
-    public static MotorSubsystem getInstance() {
+    public static RightDriveMotorSubsystem getInstance() {
     	if(instance == null) {
     		instance = new RightDriveMotorSubsystem();
     	}

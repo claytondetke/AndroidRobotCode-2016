@@ -9,12 +9,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class FrontLeftShooterMotorSubsystem extends ShooterMotorSubsystem {
-    
+
+	public static FrontLeftShooterMotorSubsystem instance;
+	
     public FrontLeftShooterMotorSubsystem() {
     	isInverted = RobotMap.FRONT_LEFT_SHOOTER_INVERTED;
     }
     
-    public static MotorSubsystem getInstance() {
+    public static FrontLeftShooterMotorSubsystem getInstance() {
     	if(instance == null) {
     		instance = new FrontLeftShooterMotorSubsystem();
     	}
