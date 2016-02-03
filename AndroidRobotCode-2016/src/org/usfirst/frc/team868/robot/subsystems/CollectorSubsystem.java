@@ -25,6 +25,7 @@ public class CollectorSubsystem extends Subsystem {
 		return instance;
 	}
 	
+	
 	private CollectorSubsystem(){
 		colOpen = new Solenoid(RobotMap.COLLECTOR_OPENER_SOLENOID);
 		colClose = new Solenoid(RobotMap.COLLECTOR_CLOSER_SOLENOID);

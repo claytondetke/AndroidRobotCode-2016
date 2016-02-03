@@ -37,6 +37,7 @@ public class PopperSubsystem extends Subsystem {
 	public void setPopper(boolean activate){
 		pop.set(activate);
 	}
+	
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
