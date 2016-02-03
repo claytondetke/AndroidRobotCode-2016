@@ -56,6 +56,7 @@ public class OI {
 		SmartDashboard.putData("LeftDriveBackward", new LeftDriveCommand(-0.1));
 		SmartDashboard.putData("RightDriveForward", new RightDriveCommand(0.1));
 		SmartDashboard.putData("RightDriveBackward", new RightDriveCommand(-0.1));
+		SmartDashboard.putData("DriveForward", new DriveCommand());
 	}
 }
 
