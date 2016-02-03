@@ -3,6 +3,7 @@ package org.usfirst.frc.team868.robot;
 
 import org.usfirst.frc.team868.robot.commands.LeftDriveCommand;
 import org.usfirst.frc.team868.robot.commands.RightDriveCommand;
+import org.usfirst.frc.team868.robot.commands.TankDriveCommand;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
@@ -56,8 +57,7 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-    	new RightDriveCommand();
-    	new LeftDriveCommand();
+    	new TankDriveCommand();
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
 

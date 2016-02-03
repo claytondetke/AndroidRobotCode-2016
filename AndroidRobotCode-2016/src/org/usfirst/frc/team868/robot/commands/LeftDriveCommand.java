@@ -22,11 +22,6 @@ public class LeftDriveCommand extends Command {
         // eg. requires(chassis);
     }
     
-    public LeftDriveCommand(){
-    	driveMotor = (LeftDriveMotorSubsystem) LeftDriveMotorSubsystem.getInstance();
-    	requires(driveMotor);
-    }
-
     // Called just before this Command runs the first time
     protected void initialize() {
     	driveMotor.setPower(power);
@@ -34,8 +29,6 @@ public class LeftDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	leftSpeed = tankDrive.getRawAxis(1);
-    	driveMotor.setPower(leftSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
