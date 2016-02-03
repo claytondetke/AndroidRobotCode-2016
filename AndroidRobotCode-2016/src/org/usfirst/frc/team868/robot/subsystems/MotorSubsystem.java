@@ -21,8 +21,8 @@ public abstract class MotorSubsystem extends Subsystem {
     }
     
     public void setPower(double power) {
-    	power = Math.max(power, powerMax);
-    	power = Math.min(power, powerMin);
+    	power = Math.min(power, powerMax);
+    	power = Math.max(power, powerMin);
     	driveMotor.set(power);
     }
     

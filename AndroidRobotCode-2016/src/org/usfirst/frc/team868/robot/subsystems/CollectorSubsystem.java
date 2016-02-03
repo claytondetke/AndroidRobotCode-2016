@@ -28,8 +28,8 @@ public class CollectorSubsystem extends Subsystem {
 	}
 	
 	private CollectorSubsystem(){
-		col1 = new Solenoid(RobotMap.COLLECTOR_SOLENOID_1);
-		col2 = new Solenoid(RobotMap.COLLECTOR_SOLENOID_2);
+		col1 = new Solenoid(RobotMap.COLLECTOR_OPENER_SOLENOID);
+		col2 = new Solenoid(RobotMap.COLLECTOR_CLOSER_SOLENOID);
 	}
 	
 	public boolean getPosition(){
