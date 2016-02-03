@@ -16,7 +16,7 @@ public class LeftDriveCommand extends Command {
 	public double leftSpeed;
 
     public LeftDriveCommand(double power) {
-    	driveMotor = new LeftDriveMotorSubsystem();
+    	driveMotor = (LeftDriveMotorSubsystem) LeftDriveMotorSubsystem.getInstance();
     	requires(driveMotor);
     	this.power=power;
         // Use requires() here to declare subsystem dependencies

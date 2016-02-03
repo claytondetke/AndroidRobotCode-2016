@@ -14,7 +14,6 @@ public class LeftDriveMotorSubsystem extends DriveMotorSubsystem {
 
 	public LeftDriveMotorSubsystem() { //constructor to set default values
 		isInverted = RobotMap.LEFT_DRIVE_MOTOR_INVERTED;
-		driveMotor = new Victor(RobotMap.LEFT_DRIVE_MOTOR);
 	}
 	
     public static MotorSubsystem getInstance() {
@@ -27,6 +26,7 @@ public class LeftDriveMotorSubsystem extends DriveMotorSubsystem {
 
 	@Override
 	public void initDefaultCommand() {
+		driveMotor = new Victor(RobotMap.LEFT_DRIVE_MOTOR);
 		// TODO Auto-generated method stub
 		
 	}

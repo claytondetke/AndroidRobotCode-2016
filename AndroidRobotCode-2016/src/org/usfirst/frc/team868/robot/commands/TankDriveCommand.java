@@ -17,10 +17,10 @@ public class TankDriveCommand extends Command {
 	public double rightSpeed = 0;
 	
     public TankDriveCommand() {
-    	rightMotor = (RightDriveMotorSubsystem) RightDriveMotorSubsystem.getInstance();
+    	//rightMotor = (RightDriveMotorSubsystem) RightDriveMotorSubsystem.getInstance();
     	leftMotor = (LeftDriveMotorSubsystem) LeftDriveMotorSubsystem.getInstance();
     	requires(leftMotor);
-    	requires(rightMotor);
+    	//requires(rightMotor);
     	
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

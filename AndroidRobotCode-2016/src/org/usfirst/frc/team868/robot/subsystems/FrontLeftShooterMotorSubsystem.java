@@ -12,7 +12,6 @@ public class FrontLeftShooterMotorSubsystem extends ShooterMotorSubsystem {
     
     public FrontLeftShooterMotorSubsystem() {
     	isInverted = RobotMap.FRONT_LEFT_SHOOTER_INVERTED;
-    	driveMotor = new Victor(RobotMap.FRONT_LEFT_SHOOTER);
     }
     
     public static MotorSubsystem getInstance() {
@@ -24,6 +23,7 @@ public class FrontLeftShooterMotorSubsystem extends ShooterMotorSubsystem {
 
 	@Override
 	public void initDefaultCommand() {
+    	driveMotor = new Victor(RobotMap.FRONT_LEFT_SHOOTER);
 		// TODO Auto-generated method stub
 		
 	}

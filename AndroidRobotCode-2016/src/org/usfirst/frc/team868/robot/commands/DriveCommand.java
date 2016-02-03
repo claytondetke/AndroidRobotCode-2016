@@ -14,10 +14,8 @@ public class DriveCommand extends CommandGroup {
         //      addSequential(new Command2());
         // these will run in order.
     	addSequential(new LeftDriveCommand(0.3));
-    	addParallel(new RightDriveCommand(0.3));
     	addSequential(new WaitCommand(2));
     	addSequential(new LeftDriveCommand(0));
-    	addParallel(new RightDriveCommand(0));
         // To run multiple commands at the same time,
         // use addParallel()
         // e.g. addParallel(new Command1());

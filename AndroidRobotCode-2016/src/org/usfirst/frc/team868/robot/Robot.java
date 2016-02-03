@@ -33,6 +33,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+    	new TankDriveCommand();
         // instantiate the command used for the autonomous period
     }
 	
@@ -72,7 +73,6 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-    	new TankDriveCommand();
         Scheduler.getInstance().run();
     }
     
