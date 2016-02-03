@@ -1,28 +1,28 @@
 package org.usfirst.frc.team868.robot.commands;
 
-import org.usfirst.frc.team868.robot.subsystems.LeftDriveMotorSubsystem;
-import org.usfirst.frc.team868.robot.subsystems.RightDriveMotorSubsystem;
+import org.usfirst.frc.team868.robot.subsystems.PopperSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class RightDriveCommand extends Command {
-	private RightDriveMotorSubsystem driveMotor;
-	private double power;
+public class PopperCommand extends Command {
+	
+	private PopperSubsystem popper;
+	private boolean toggle;
 
-    public RightDriveCommand(double power) {
-    	driveMotor=(RightDriveMotorSubsystem) RightDriveMotorSubsystem.getInstance();
-    	requires(driveMotor);
-    	this.power=power;
+    public PopperCommand() {
+    	popper = PopperSubsystem.getInstance();
+    	requires(popper);
+    	toggle = !popper.getPosition();
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	driveMotor.setPower(power);
+    	popper.setPopper(toggle);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -43,5 +43,3 @@ public class RightDriveCommand extends Command {
     protected void interrupted() {
     }
 }
-
-
