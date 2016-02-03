@@ -13,12 +13,10 @@ public class CollectorSubsystem extends Subsystem {
     
 	private static CollectorSubsystem instance;
 	
-	private Solenoid col1;
-	private Solenoid col2;
+	private Solenoid colOpen;
+	private Solenoid colClose;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-	
-	
 	
 	public static CollectorSubsystem getInstance(){
 		if(instance == null){
@@ -28,17 +26,17 @@ public class CollectorSubsystem extends Subsystem {
 	}
 	
 	private CollectorSubsystem(){
-		col1 = new Solenoid(RobotMap.COLLECTOR_SOLENOID_1);
-		col2 = new Solenoid(RobotMap.COLLECTOR_SOLENOID_2);
+		colOpen = new Solenoid(RobotMap.COLLECTOR_OPENER_SOLENOID);
+		colClose = new Solenoid(RobotMap.COLLECTOR_CLOSER_SOLENOID);
 	}
 	
 	public boolean getPosition(){
-		return col1.get();
+		return colOpen.get();
 	}
 	
-	public void setCollector(boolean on){
-		col1.set(on);
-		col2.set(!on);
+	public void setCollector(boolean activate){
+		colOpen.set(activate);
+		colClose.set(!activate);
 	}
 	
 	public void toggleCollector(){
@@ -48,10 +46,6 @@ public class CollectorSubsystem extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-    }
-    
-    public void updateSmartDashboard(){
-    	SmartDashboard.putBoolean("Collecting", getPosition());
     }
 }
 
