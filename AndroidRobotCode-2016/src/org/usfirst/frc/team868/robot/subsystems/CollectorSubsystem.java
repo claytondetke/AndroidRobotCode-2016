@@ -40,7 +40,6 @@ public class CollectorSubsystem extends Subsystem {
 		colClose.set(!activate);
 	}
 	
-	
 	public void toggleCollector(){
 		setCollector(!getPosition());
 	}
