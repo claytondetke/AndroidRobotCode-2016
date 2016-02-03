@@ -11,7 +11,7 @@ public class RightDriveMotorSubsystem extends DriveMotorSubsystem {
     // here. Call these from Commands.
 
 	public RightDriveMotorSubsystem() { //constructor to set default values
-		isInverted = false;
+		isInverted = RobotMap.RIGHT_DRIVE_MOTOR_INVERTED;
 		MOTOR_PORT = RobotMap.RIGHT_DRIVE_MOTOR;
 	}
 	
