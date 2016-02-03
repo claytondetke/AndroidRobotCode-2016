@@ -1,6 +1,7 @@
 package org.usfirst.frc.team868.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
@@ -12,6 +13,11 @@ public class DriveCommand extends CommandGroup {
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
+    	addSequential(new LeftDriveCommand(0.5));
+    	addSequential(new RightDriveCommand(0.5));
+    	addSequential(new WaitCommand(5));
+    	addSequential(new LeftDriveCommand(0));
+    	addSequential(new RightDriveCommand(0));
 
         // To run multiple commands at the same time,
         // use addParallel()
