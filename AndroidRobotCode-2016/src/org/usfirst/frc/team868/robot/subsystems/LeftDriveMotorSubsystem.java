@@ -22,6 +22,11 @@ public class LeftDriveMotorSubsystem extends Subsystem {
     	power = Math.max(power, -1);
     	driveMotor.set(power);
     }
+	
+	public LeftDriveMotorSubsystem(){
+		isInverted = RobotMap.LEFT_DRIVE_MOTOR_INVERTED;
+		driveMotor = new Victor(RobotMap.LEFT_DRIVE_MOTOR);
+	}
     
     public void stopPower() {
     	setPower(0);
@@ -41,7 +46,6 @@ public class LeftDriveMotorSubsystem extends Subsystem {
 
 	@Override
 	public void initDefaultCommand() {
-		driveMotor = new Victor(RobotMap.LEFT_DRIVE_MOTOR);
 		// TODO Auto-generated method stub
 		
 	}

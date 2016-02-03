@@ -17,10 +17,10 @@ public class TankDriveCommand extends Command {
 	public double rightSpeed = 0;
 	
     public TankDriveCommand() {
-    	//rightMotor = RightDriveMotorSubsystem.getInstance();
+    	rightMotor = RightDriveMotorSubsystem.getInstance();
     	leftMotor = LeftDriveMotorSubsystem.getInstance();
     	requires(leftMotor);
-    	//requires(rightMotor);
+    	requires(rightMotor);
     	
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -33,9 +33,9 @@ public class TankDriveCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	leftSpeed = tankDrive.getRawAxis(1);
-    	//rightSpeed = tankDrive.getRawAxis(3);
+    	rightSpeed = tankDrive.getRawAxis(3);
     	leftMotor.setPower(leftSpeed);
-    	//rightMotor.setPower(rightSpeed);
+    	rightMotor.setPower(rightSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

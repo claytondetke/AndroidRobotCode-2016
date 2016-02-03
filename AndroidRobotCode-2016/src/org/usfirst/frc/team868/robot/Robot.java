@@ -2,6 +2,7 @@
 package org.usfirst.frc.team868.robot;
 
 import org.usfirst.frc.team868.robot.commands.*;
+import org.usfirst.frc.team868.robot.subsystems.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
@@ -22,9 +23,7 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 
-    Command autonomousCommand;
-    public Joystick tankDrive = new Joystick(0);
-    public JoystickButton X = new JoystickButton(tankDrive, 1);//Toggles collector to open and closed.
+    Command autonomousCommand;//Toggles collector to open and closed.
 	public LeftDriveCommand leftSpeed;
 	public RightDriveCommand rightSpeed;
     /**
@@ -32,6 +31,14 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+    	BackLeftShooterMotorSubsystem.getInstance();
+    	BackRightShooterMotorSubsystem.getInstance();
+    	CollectorSubsystem.getInstance();
+    	FrontLeftShooterMotorSubsystem.getInstance();
+    	FrontRightShooterMotorSubsystem.getInstance();
+    	LeftDriveMotorSubsystem.getInstance();
+    	PopperSubsystem.getInstance();
+    	RightDriveMotorSubsystem.getInstance();    	
 		oi = new OI();
         // instantiate the command used for the autonomous period
     }
@@ -73,8 +80,6 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-    	X.toggleWhenPressed(new CollectorCommand());
-    	
         Scheduler.getInstance().run();
     }
     
