@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class FrontLeftShooterMotorSubsystem extends ShooterMotorSubsystem {
     
     public FrontLeftShooterMotorSubsystem() {
-    	isInverted = true;
+    	isInverted = RobotMap.FRONT_LEFT_SHOOTER_INVERTED;
     	MOTOR_PORT = RobotMap.FRONT_LEFT_SHOOTER;
     }
     
