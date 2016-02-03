@@ -1,6 +1,9 @@
 
 package org.usfirst.frc.team868.robot;
 
+import org.usfirst.frc.team868.robot.commands.LeftDriveCommand;
+import org.usfirst.frc.team868.robot.commands.RightDriveCommand;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -20,19 +23,16 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 
     Command autonomousCommand;
-   /* RobotDrive tankDrive;
-    Joystick leftJoy, rightJoy;*/
+    public Joystick tankDrive = new Joystick(0);
+	public LeftDriveCommand leftSpeed;
+	public RightDriveCommand rightSpeed;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
 		oi = new OI();
-		/*tankDrive = new RobotDrive(1, 2, 3, 4);
-		leftJoy = new Joystick(1);
-		rightJoy = new Joystick(2);*/
         // instantiate the command used for the autonomous period
-        //autonomousCommand = new ExampleCommand();------------------------------------------------------------!!!!!!!!!!!!
     }
 	
 	public void disabledPeriodic() {
@@ -56,8 +56,9 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
+    	new RightDriveCommand();
+    	new LeftDriveCommand();
         if (autonomousCommand != null) autonomousCommand.cancel();
-        //TankDriveCommand.tankDrive(leftJoy, rightJoy);
     }
 
     /**

@@ -1,41 +1,23 @@
 package org.usfirst.frc.team868.robot.commands;
 
-import org.usfirst.frc.team868.robot.subsystems.RightDriveMotorSubsystem;
-
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class RightDriveCommand extends Command {
-	private RightDriveMotorSubsystem driveMotor;
-	private double power;
-	public Joystick tankDrive = new Joystick(0);
-	public double rightSpeed;
+public class DriveCommand extends Command {
 
-    public RightDriveCommand(double power) {
-    	driveMotor=(RightDriveMotorSubsystem) RightDriveMotorSubsystem.getInstance();
-    	requires(driveMotor);
-    	this.power=power;
+    public DriveCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    }
-    
-    public RightDriveCommand(){
-    	driveMotor = (RightDriveMotorSubsystem) RightDriveMotorSubsystem.getInstance();
-    	requires(driveMotor);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	driveMotor.setPower(power);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	rightSpeed = tankDrive.getRawAxis(3);
-    	driveMotor.setPower(rightSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -52,4 +34,3 @@ public class RightDriveCommand extends Command {
     protected void interrupted() {
     }
 }
-
