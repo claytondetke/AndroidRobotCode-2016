@@ -53,5 +53,6 @@ public class CollectorSubsystem extends Subsystem {
     public void updateSmartDashboard(){
     	SmartDashboard.putBoolean("Collecting", getPosition());
     }
+    
 }
 
