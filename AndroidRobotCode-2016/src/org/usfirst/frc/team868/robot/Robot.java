@@ -38,12 +38,17 @@ public class Robot extends IterativeRobot {
     	FrontRightShooterMotorSubsystem.getInstance();
     	LeftDriveMotorSubsystem.getInstance();
     	PopperSubsystem.getInstance();
-    	RightDriveMotorSubsystem.getInstance();    	
+    	RightDriveMotorSubsystem.getInstance();
 		oi = new OI();
         // instantiate the command used for the autonomous period
     }
+    
+    public void updateSmartDashboard(){
+    	
+    }
 	
 	public void disabledPeriodic() {
+		updateSmartDashboard();
 		Scheduler.getInstance().run();
 	}
 
@@ -57,6 +62,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
+    	updateSmartDashboard();
         Scheduler.getInstance().run();
     }
 
@@ -80,6 +86,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	updateSmartDashboard();
         Scheduler.getInstance().run();
     }
     
@@ -87,6 +94,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
+    	updateSmartDashboard();
         LiveWindow.run();
     }
 }
