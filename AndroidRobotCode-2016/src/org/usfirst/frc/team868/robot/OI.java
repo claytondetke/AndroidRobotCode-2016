@@ -69,6 +69,7 @@ public class OI {
 	}
 	
 	public void initSmartDashboard(){
+		SmartDashboard.putData("Tank_Drive", new TankDriveCommand());
 		SmartDashboard.putData("Toggle_Collector", new CollectorCommand());
 		SmartDashboard.putData("Collector_Motor_Run", new CollectorCommand(.5));
 		SmartDashboard.putData("Left_Drive_Forward", new DriveCommand(0.1, 0));
