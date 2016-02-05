@@ -53,6 +53,10 @@ public class CollectorSubsystem extends Subsystem {
 		colClose.set(!activate);
 	}
 	
+	public void stopCollector(){
+		setCollector(0);
+	}
+	
 	public void setCollector(double power){
 		if(isInverted){
 			colMotor.set(-power);
