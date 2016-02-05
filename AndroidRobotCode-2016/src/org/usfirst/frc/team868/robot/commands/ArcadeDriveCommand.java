@@ -1,7 +1,6 @@
 package org.usfirst.frc.team868.robot.commands;
 
-import org.usfirst.frc.team868.robot.RobotMap;
-import org.usfirst.frc.team868.robot.subsystems.*;
+import org.usfirst.frc.team868.robot.subsystems.DriveMotorSubsystem;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -9,17 +8,16 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class TankDriveCommand extends Command {
+public class ArcadeDriveCommand extends Command {
 	
-	Joystick tankDrive = new Joystick(0);
-	public DriveMotorSubsystem driveMotor;
-	public double leftSpeed = 0;
-	public double rightSpeed = 0;
-	
-    public TankDriveCommand() {
+	Joystick ArcadeDrive = new Joystick(0);
+	private DriveMotorSubsystem driveMotor;
+	private double leftPower = 0;
+	private double rightPower = 0;
+
+    public ArcadeDriveCommand() {
     	driveMotor = DriveMotorSubsystem.getInstance();
     	requires(driveMotor);
-    	
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -30,10 +28,10 @@ public class TankDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	leftSpeed = -tankDrive.getRawAxis(RobotMap.Joystick.LEFT_VERTICAL_AXIS);
-    	rightSpeed = -tankDrive.getRawAxis(RobotMap.Joystick.RIGHT_VERTICAL_AXIS);
-    	driveMotor.setLeftPower(leftSpeed);
-    	driveMotor.setRightPower(rightSpeed);
+//    	leftPower = ;
+//    	rightPower = ;
+    	driveMotor.setLeftPower(leftPower);
+    	driveMotor.setRightPower(rightPower);
     }
 
     // Make this return true when this Command no longer needs to run execute()

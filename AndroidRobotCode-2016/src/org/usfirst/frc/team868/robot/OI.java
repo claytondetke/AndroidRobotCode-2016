@@ -68,8 +68,8 @@ public class OI {
 		shooterCommandDecrement.whenPressed(new ChangeShooterCommand(-0.3));
 		shooterCommandStop.whenPressed(new ShooterCommand(0));
 		shooterCommandSet.whenPressed(new ShooterCommand(0.5));
-		collectorCommandUp.whenPressed(new CollectorCommand(true));
-		collectorCommandDown.whenPressed(new CollectorCommand(false));
+		collectorCommandUp.whenPressed(new CollectorCommand(false));
+		collectorCommandDown.whenPressed(new CollectorCommand(true));
 		stopperCommandToggle.whenPressed(new StopperCommand());
 	}
 	
