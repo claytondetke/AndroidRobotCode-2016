@@ -51,12 +51,15 @@ public class FrontShooterSubsystem extends Subsystem {
     public void updateSmartDashboard(){
     	SmartDashboard.putNumber("Front_Shooter_Motors_Power", getPower());
     }
-
-    public void initDefaultCommand() {
+    
+    public FrontShooterSubsystem(){
     	isRightInverted = RobotMap.FRONT_RIGHT_SHOOTER_INVERTED;
     	isLeftInverted = RobotMap.FRONT_LEFT_SHOOTER_INVERTED;
     	rightMotor = new Victor(RobotMap.FRONT_RIGHT_SHOOTER);
     	leftMotor = new Victor(RobotMap.FRONT_LEFT_SHOOTER);
+    }
+
+    public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }

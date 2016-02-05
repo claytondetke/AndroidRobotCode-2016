@@ -22,7 +22,7 @@ public class BackShooterSubsystem extends Subsystem {
 	
 	public void setPower(double power) {
     	power = Math.min(power, 1);
-    	power = Math.max(power, 0);
+    	power = Math.max(power, -1);
     	if(isRightInverted)
     		rightMotor.set(-power);
     	else
@@ -52,13 +52,15 @@ public class BackShooterSubsystem extends Subsystem {
     	SmartDashboard.putNumber("Back_Shooter_Motors_Power", getPower());
     }
 
-    public void initDefaultCommand() {
+    public BackShooterSubsystem() {
     	isRightInverted = RobotMap.BACK_RIGHT_SHOOTER_INVERTED;
     	isLeftInverted = RobotMap.BACK_LEFT_SHOOTER_INVERTED;
     	rightMotor = new Victor(RobotMap.BACK_RIGHT_SHOOTER);
     	leftMotor = new Victor(RobotMap.BACK_LEFT_SHOOTER);
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+    }
+    
+    public void initDefaultCommand(){
+    	
     }
 }
 
