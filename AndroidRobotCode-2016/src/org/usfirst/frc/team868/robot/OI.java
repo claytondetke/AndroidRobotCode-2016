@@ -73,10 +73,6 @@ public class OI {
 		SmartDashboard.putData("Tank_Drive", new TankDriveCommand());
 		SmartDashboard.putData("Toggle_Collector", new CollectorCommand());
 		SmartDashboard.putData("Collector_Motor_Run", new CollectorCommand(.5));
-		SmartDashboard.putData("Drive_Forward", new DriveCommand(0.3));
-		SmartDashboard.putData("Drive_Backwards", new DriveCommand(-0.3));
-		SmartDashboard.putData("Increment_Shooter", new ChangeShooterCommand(0.3));
-		SmartDashboard.putData("Shooter_Decrement", new ChangeShooterCommand(-0.3));
 		SmartDashboard.putData("STOP_DRIVE", new DriveCommand(0));
 	}
 }
