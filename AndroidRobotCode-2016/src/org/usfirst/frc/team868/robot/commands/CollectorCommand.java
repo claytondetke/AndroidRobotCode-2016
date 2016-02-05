@@ -12,6 +12,7 @@ public class CollectorCommand extends Command {
 	public CollectorSubsystem collect;
 	private boolean toggling;
 	private boolean position;
+	private double power = 0;
 	
     public CollectorCommand() {
     	collect = CollectorSubsystem.getInstance();
@@ -19,6 +20,12 @@ public class CollectorCommand extends Command {
     	toggling = true;
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    }
+    
+    public CollectorCommand(double power){
+    	this();
+    	this.power = power;
+    	toggling = false;
     }
     
     public CollectorCommand(boolean position){
@@ -32,7 +39,11 @@ public class CollectorCommand extends Command {
     	if(toggling){
     		position = !collect.getPosition();
     	}
-    	collect.setCollector(position);
+    	if(power != 0){
+    		collect.setCollector(power);
+    	}else{
+    		collect.setCollector(position);
+    	}
     }
 
     // Called repeatedly when this Command is scheduled to run

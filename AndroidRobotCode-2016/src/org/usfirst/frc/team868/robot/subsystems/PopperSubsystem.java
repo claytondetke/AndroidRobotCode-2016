@@ -4,6 +4,7 @@ import org.usfirst.frc.team868.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -28,6 +29,10 @@ public class PopperSubsystem extends Subsystem {
 	
 	public boolean getPosition(){
 		return pop.get();
+	}
+	
+	public void updateSmartDashboard(){
+		SmartDashboard.putBoolean("Popper_Position", getPosition());
 	}
 	
 	public void togglePopper(){

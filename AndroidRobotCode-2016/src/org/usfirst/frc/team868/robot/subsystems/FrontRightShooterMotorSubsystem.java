@@ -4,6 +4,7 @@ import org.usfirst.frc.team868.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -21,6 +22,10 @@ public class FrontRightShooterMotorSubsystem extends ShooterMotorSubsystem {
     		instance = new FrontRightShooterMotorSubsystem();
     	}
     	return instance;
+    }
+    
+    public void updateSmartDashboard(){
+    	SmartDashboard.putNumber("Front_Right_Shooter_Power", getPower());
     }
 
 	@Override

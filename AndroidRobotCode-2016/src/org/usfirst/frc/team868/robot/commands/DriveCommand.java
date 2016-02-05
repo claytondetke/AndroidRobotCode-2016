@@ -8,14 +8,13 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
  */
 public class DriveCommand extends CommandGroup {
     
-    public  DriveCommand() {
+    public  DriveCommand(double power) {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
-    	addSequential(new LeftDriveCommand(0.3));
-    	addSequential(new WaitCommand(2));
-    	addSequential(new LeftDriveCommand(0));
+    	addParallel(new LeftDriveCommand(power));
+    	addParallel(new RightDriveCommand(power));
         // To run multiple commands at the same time,
         // use addParallel()
         // e.g. addParallel(new Command1());

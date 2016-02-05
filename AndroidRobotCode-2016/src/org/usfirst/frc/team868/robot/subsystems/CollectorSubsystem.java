@@ -27,11 +27,15 @@ public class CollectorSubsystem extends Subsystem {
 		return instance;
 	}
 	
-	
 	private CollectorSubsystem(){
 		colOpen = new Solenoid(RobotMap.COLLECTOR_OPENER_SOLENOID);
 		colClose = new Solenoid(RobotMap.COLLECTOR_CLOSER_SOLENOID);
 		colMotor = new Victor(RobotMap.COLLECTOR);
+	}
+	
+	public void updateSmartDashboard(){
+		SmartDashboard.putBoolean("Collector_Position", getPosition());
+		SmartDashboard.putNumber("Collector_Speed", getPower());
 	}
 	
 	public boolean getPosition(){

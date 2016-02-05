@@ -31,8 +31,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	BackLeftShooterMotorSubsystem.getInstance();
-    	BackRightShooterMotorSubsystem.getInstance();
+    	BackShooterMotorSubsystem.getInstance();
     	CollectorSubsystem.getInstance();
     	FrontLeftShooterMotorSubsystem.getInstance();
     	FrontRightShooterMotorSubsystem.getInstance();
@@ -44,7 +43,13 @@ public class Robot extends IterativeRobot {
     }
     
     public void updateSmartDashboard(){
-    	
+    	BackShooterMotorSubsystem.getInstance().updateSmartDashboard();
+    	CollectorSubsystem.getInstance().updateSmartDashboard();
+    	FrontLeftShooterMotorSubsystem.getInstance().updateSmartDashboard();
+    	FrontRightShooterMotorSubsystem.getInstance().updateSmartDashboard();
+    	LeftDriveMotorSubsystem.getInstance().updateSmartDashboard();
+    	PopperSubsystem.getInstance().updateSmartDashboard();
+    	RightDriveMotorSubsystem.getInstance().updateSmartDashboard();
     }
 	
 	public void disabledPeriodic() {
@@ -53,7 +58,7 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
-    	new DriveCommand();
+    	new DriveCommand(0);
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
     }

@@ -4,6 +4,7 @@ import org.usfirst.frc.team868.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -27,6 +28,10 @@ public class LeftDriveMotorSubsystem extends Subsystem {
 		isInverted = RobotMap.LEFT_DRIVE_MOTOR_INVERTED;
 		driveMotor = new Victor(RobotMap.LEFT_DRIVE_MOTOR);
 	}
+	
+	public void updateSmartDashboard(){
+    	SmartDashboard.putNumber("Left_Drive_Motor_Power", getPower());
+    }
     
     public void stopPower() {
     	setPower(0);
