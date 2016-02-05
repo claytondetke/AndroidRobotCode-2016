@@ -15,14 +15,15 @@ public class PopperCommand extends Command {
     public PopperCommand() {
     	popper = PopperSubsystem.getInstance();
     	requires(popper);
-    	toggle = !popper.getPosition();
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	toggle = !popper.getPosition();
     	popper.setPopper(toggle);
+    	end();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -41,5 +42,6 @@ public class PopperCommand extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }
