@@ -17,6 +17,7 @@ public class CollectorSubsystem extends Subsystem {
 	private Solenoid colOpen;
 	private Solenoid colClose;
 	private Victor colMotor;
+	private boolean isInverted;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
@@ -31,6 +32,7 @@ public class CollectorSubsystem extends Subsystem {
 		colOpen = new Solenoid(RobotMap.COLLECTOR_OPENER_SOLENOID);
 		colClose = new Solenoid(RobotMap.COLLECTOR_CLOSER_SOLENOID);
 		colMotor = new Victor(RobotMap.COLLECTOR);
+    	isInverted = RobotMap.COLLECTOR_INVERTED;
 	}
 	
 	public void updateSmartDashboard(){
@@ -52,7 +54,11 @@ public class CollectorSubsystem extends Subsystem {
 	}
 	
 	public void setCollector(double power){
-		colMotor.set(power);
+		if(isInverted){
+			colMotor.set(-power);
+		}else{
+			colMotor.set(power);
+		}
 	}
 	
 	public void toggleCollector(){

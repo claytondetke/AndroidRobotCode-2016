@@ -1,6 +1,5 @@
 package org.usfirst.frc.team868.robot.commands;
 
-import org.usfirst.frc.team868.robot.RobotMap;
 import org.usfirst.frc.team868.robot.subsystems.CollectorSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -13,12 +12,10 @@ public class CollectorCommand extends Command {
 	public CollectorSubsystem collect;
 	private boolean toggling;
 	private boolean position;
-	private boolean isInverted;
 	private double power = 0;
 	
     public CollectorCommand() {
     	collect = CollectorSubsystem.getInstance();
-    	isInverted = RobotMap.COLLECTOR_INVERTED;
     	requires(collect);
     	toggling = true;
         // Use requires() here to declare subsystem dependencies
@@ -43,11 +40,7 @@ public class CollectorCommand extends Command {
     		position = !collect.getPosition();
     	}
     	if(power != 0){
-    		if(isInverted){
-    			collect.setCollector(-power);
-    		}else{
-    			collect.setCollector(power);
-    		}
+    		collect.setCollector(power);
     	}else{
     		collect.setCollector(position);
     	}

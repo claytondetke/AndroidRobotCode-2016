@@ -59,12 +59,15 @@ public class DriveMotorSubsystem extends Subsystem {
     	SmartDashboard.putNumber("Right_Drive_Power", getRightPower());
     	SmartDashboard.putNumber("Left_Drive_Power", getLeftPower());
     }
-
-	protected void initDefaultCommand() {
+    
+    public DriveMotorSubsystem(){
 		isLeftInverted = RobotMap.LEFT_DRIVE_MOTOR_INVERTED;
 		isRightInverted = RobotMap.RIGHT_DRIVE_MOTOR_INVERTED;
 		rightMotor = new Victor(RobotMap.RIGHT_DRIVE_MOTOR);
 		leftMotor = new Victor(RobotMap.LEFT_DRIVE_MOTOR);
+    }
+    
+	protected void initDefaultCommand() {
 	}
 }
 
