@@ -16,10 +16,10 @@ public class ChangeShooterCommand extends Command {
 	
     public ChangeShooterCommand(double power) {
         frontMotor = FrontShooterSubsystem.getInstance();
-        //backMotor  = BackShooterSubsystem.getInstance();
+        backMotor  = BackShooterSubsystem.getInstance();
         
         requires(frontMotor);
-        //requires(backMotor);
+        requires(backMotor);
         
         this.changeAmount = power;
     }
@@ -27,16 +27,16 @@ public class ChangeShooterCommand extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	double frontPower = frontMotor.getPower();
-    	//double backPower  = backMotor.getPower();
+    	double backPower  = backMotor.getPower();
     	
     	frontPower = frontPower + changeAmount;
-    	//backPower  = backPower  + changeAmount;
+    	backPower  = backPower  + changeAmount;
     	
     	frontPower = Math.max(Math.min(frontPower, 1), -1);
-    	//backPower  = Math.max(Math.min(backPower,  1), -1);
+    	backPower  = Math.max(Math.min(backPower,  1), -1);
     	
     	frontMotor.setPower(frontPower);
-    	//backMotor.setPower(backPower);
+    	backMotor.setPower(backPower);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -45,7 +45,7 @@ public class ChangeShooterCommand extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true
@@ -55,5 +55,6 @@ public class ChangeShooterCommand extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }
