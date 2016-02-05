@@ -9,13 +9,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class BackShooterMotorSubsystem extends Subsystem {
+public class BackShooterSubsystem extends Subsystem {
 	
 	private Victor leftMotor;
 	private Victor rightMotor;
 	private boolean isLeftInverted;
 	private boolean isRightInverted;
-	private static BackShooterMotorSubsystem instance;
+	private static BackShooterSubsystem instance;
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -33,9 +33,9 @@ public class BackShooterMotorSubsystem extends Subsystem {
     		leftMotor.set(power);
     }
 
-    public static BackShooterMotorSubsystem getInstance() {
+    public static BackShooterSubsystem getInstance() {
     	if(instance == null) {
-    		instance = new BackShooterMotorSubsystem();
+    		instance = new BackShooterSubsystem();
     	}
     	return instance;
     }

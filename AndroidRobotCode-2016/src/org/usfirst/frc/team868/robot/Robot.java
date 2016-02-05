@@ -31,7 +31,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	BackShooterMotorSubsystem.getInstance();
+    	BackShooterSubsystem.getInstance();
     	CollectorSubsystem.getInstance();
     	FrontLeftShooterMotorSubsystem.getInstance();
     	FrontRightShooterMotorSubsystem.getInstance();
@@ -43,7 +43,7 @@ public class Robot extends IterativeRobot {
     }
     
     public void updateSmartDashboard(){
-    	BackShooterMotorSubsystem.getInstance().updateSmartDashboard();
+    	BackShooterSubsystem.getInstance().updateSmartDashboard();
     	CollectorSubsystem.getInstance().updateSmartDashboard();
     	FrontLeftShooterMotorSubsystem.getInstance().updateSmartDashboard();
     	FrontRightShooterMotorSubsystem.getInstance().updateSmartDashboard();
