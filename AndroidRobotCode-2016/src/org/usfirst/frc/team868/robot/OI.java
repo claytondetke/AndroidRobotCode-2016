@@ -52,12 +52,12 @@ public class OI {
 	Button shooterCommandIncrement, shooterCommandDecrement, shooterCommandStop;
 	
 	public void initJoystick(){
-		shooterCommandIncrement = new JoystickButton(joystick, 4);
-		shooterCommandDecrement = new JoystickButton(joystick, 2);
-		shooterCommandStop      = new JoystickButton(joystick, 6);
+		shooterCommandIncrement = new JoystickButton(joystick, RobotMap.Buttons.Y);
+		shooterCommandDecrement = new JoystickButton(joystick, RobotMap.Buttons.A);
+		shooterCommandStop      = new JoystickButton(joystick, RobotMap.Buttons.RB);
 		
-		shooterCommandIncrement.whenPressed(new ChangeShooterCommand(0.1));
-		shooterCommandDecrement.whenPressed(new ChangeShooterCommand(-0.1));
+		shooterCommandIncrement.whenPressed(new ChangeShooterCommand(0.3));
+		shooterCommandDecrement.whenPressed(new ChangeShooterCommand(-0.3));
 		shooterCommandStop.whenPressed(new ShooterCommand(0));
 	}
 	
@@ -74,7 +74,7 @@ public class OI {
 		SmartDashboard.putData("Collector_Motor_Run", new CollectorCommand(.5));
 		SmartDashboard.putData("Drive_Forward", new DriveCommand(0.3));
 		SmartDashboard.putData("Drive_Backwards", new DriveCommand(-0.3));
-		SmartDashboard.putData("Increment_Shooter", new ChangeShooterCommand(0.1));
-		SmartDashboard.putData("Shooter_Decrement", new ChangeShooterCommand(-0.1));
+		SmartDashboard.putData("Increment_Shooter", new ChangeShooterCommand(0.3));
+		SmartDashboard.putData("Shooter_Decrement", new ChangeShooterCommand(-0.3));
 	}
 }
