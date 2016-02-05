@@ -12,7 +12,7 @@ public class DriveCommand extends Command {
 	private DriveMotorSubsystem driveMotor;
 	private double leftPower;
 	private double rightPower;
-	private double power = 0;
+	public double power = 0;
 	
     public DriveCommand(double leftPower, double rightPower) {
     	driveMotor = DriveMotorSubsystem.getInstance();
