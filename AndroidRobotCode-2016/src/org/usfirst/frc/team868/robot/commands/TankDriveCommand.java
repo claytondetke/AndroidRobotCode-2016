@@ -11,16 +11,13 @@ import edu.wpi.first.wpilibj.command.Command;
 public class TankDriveCommand extends Command {
 	
 	Joystick tankDrive = new Joystick(0);
-	public RightDriveMotorSubsystem rightMotor;
-	public LeftDriveMotorSubsystem leftMotor;
+	public DriveMotorSubsystem driveMotor;
 	public double leftSpeed = 0;
 	public double rightSpeed = 0;
 	
     public TankDriveCommand() {
-    	rightMotor = RightDriveMotorSubsystem.getInstance();
-    	leftMotor = LeftDriveMotorSubsystem.getInstance();
-    	requires(leftMotor);
-    	requires(rightMotor);
+    	driveMotor = DriveMotorSubsystem.getInstance();
+    	requires(driveMotor);
     	
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -34,8 +31,8 @@ public class TankDriveCommand extends Command {
     protected void execute() {
     	leftSpeed = tankDrive.getRawAxis(1);
     	rightSpeed = tankDrive.getRawAxis(3);
-    	leftMotor.setPower(leftSpeed);
-    	rightMotor.setPower(rightSpeed);
+    	driveMotor.setLeftPower(leftSpeed);
+    	driveMotor.setRightPower(rightSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

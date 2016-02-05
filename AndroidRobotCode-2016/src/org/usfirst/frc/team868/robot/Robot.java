@@ -24,8 +24,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 
     Command autonomousCommand;//Toggles collector to open and closed.
-	public LeftDriveCommand leftSpeed;
-	public RightDriveCommand rightSpeed;
+	public DriveCommand driveMotor;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -34,9 +33,8 @@ public class Robot extends IterativeRobot {
     	BackShooterSubsystem.getInstance();
     	CollectorSubsystem.getInstance();
     	FrontShooterSubsystem.getInstance();
-    	LeftDriveMotorSubsystem.getInstance();
+    	DriveMotorSubsystem.getInstance();
     	PopperSubsystem.getInstance();
-    	RightDriveMotorSubsystem.getInstance();
 		oi = new OI();
         // instantiate the command used for the autonomous period
     }
@@ -45,9 +43,8 @@ public class Robot extends IterativeRobot {
     	BackShooterSubsystem.getInstance().updateSmartDashboard();
     	CollectorSubsystem.getInstance().updateSmartDashboard();
     	FrontShooterSubsystem.getInstance().updateSmartDashboard();
-    	LeftDriveMotorSubsystem.getInstance().updateSmartDashboard();
+    	DriveMotorSubsystem.getInstance().updateSmartDashboard();
     	PopperSubsystem.getInstance().updateSmartDashboard();
-    	RightDriveMotorSubsystem.getInstance().updateSmartDashboard();
     }
 	
 	public void disabledPeriodic() {
