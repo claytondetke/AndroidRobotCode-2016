@@ -29,8 +29,8 @@ public class TankDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	leftSpeed = tankDrive.getRawAxis(1);
-    	rightSpeed = tankDrive.getRawAxis(3);
+    	leftSpeed = -tankDrive.getRawAxis(1);
+    	rightSpeed = -tankDrive.getRawAxis(3);
     	driveMotor.setLeftPower(leftSpeed);
     	driveMotor.setRightPower(rightSpeed);
     }
@@ -42,10 +42,12 @@ public class TankDriveCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	driveMotor.stopPower();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }
