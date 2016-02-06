@@ -47,6 +47,7 @@ public class OI {
 		joystick = new Joystick(0);
 		
 		initSmartDashboard();
+		initJoystick();
 	}
 	
 	Button shooterCommandIncrement, shooterCommandDecrement, shooterCommandStop;
