@@ -43,6 +43,7 @@ public class CollectorCommand extends Command {
     		collect.setCollector(power);
     	}else{
     		collect.setCollector(position);
+    		collect.setCollector(0);
     	}
     }
 
@@ -52,12 +53,11 @@ public class CollectorCommand extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	collect.stopCollector();
     }
 
     // Called when another command which requires one or more of the same
