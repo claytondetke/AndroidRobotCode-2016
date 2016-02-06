@@ -1,28 +1,28 @@
 package org.usfirst.frc.team868.robot.commands;
 
-import org.usfirst.frc.team868.robot.subsystems.PopperSubsystem;
+import org.usfirst.frc.team868.robot.subsystems.StopperSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class PopperCommand extends Command {
+public class StopperCommand extends Command {
 	
-	private PopperSubsystem popper;
+	private StopperSubsystem stopper;
 	private boolean toggle;
-
-    public PopperCommand() {
-    	popper = PopperSubsystem.getInstance();
-    	requires(popper);
+	
+    public StopperCommand() {
+    	stopper = StopperSubsystem.getInstance();
+    	requires(stopper);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	toggle = !popper.getPosition();
-    	popper.setPopper(toggle);
+    	toggle = !stopper.getPosition();
+    	stopper.setStopper(toggle);
     	end();
     }
 

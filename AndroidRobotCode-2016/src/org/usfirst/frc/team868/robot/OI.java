@@ -51,25 +51,26 @@ public class OI {
 	}
 	
 	Button shooterCommandIncrement, shooterCommandDecrement, shooterCommandStop,
-		   shooterCommandSet, popperCommandToggle, collectorCommandUp,
-		   collectorCommandDown;
+		   shooterCommandSet, collectorCommandUp,
+		   collectorCommandDown,
+		   stopperCommandToggle;
 	
 	public void initJoystick(){
 		shooterCommandIncrement = new JoystickButton(joystick, RobotMap.Buttons.Y);
 		shooterCommandDecrement = new JoystickButton(joystick, RobotMap.Buttons.A);
 		shooterCommandStop      = new JoystickButton(joystick, RobotMap.Buttons.RB);
 		shooterCommandSet       = new JoystickButton(joystick, RobotMap.Buttons.B);
-		popperCommandToggle     = new JoystickButton(joystick, RobotMap.Buttons.RT);
 		collectorCommandUp      = new JoystickButton(joystick, RobotMap.Buttons.LB);
 		collectorCommandDown    = new JoystickButton(joystick, RobotMap.Buttons.LT);
+		stopperCommandToggle     = new JoystickButton(joystick, RobotMap.Buttons.RT);
 		
 		shooterCommandIncrement.whenPressed(new ChangeShooterCommand(0.3));
 		shooterCommandDecrement.whenPressed(new ChangeShooterCommand(-0.3));
 		shooterCommandStop.whenPressed(new ShooterCommand(0));
 		shooterCommandSet.whenPressed(new ShooterCommand(0.5));
-		popperCommandToggle.whenPressed(new PopperCommand());
 		collectorCommandUp.whenPressed(new CollectorCommand(true));
 		collectorCommandDown.whenPressed(new CollectorCommand(false));
+		stopperCommandToggle.whenPressed(new StopperCommand());
 	}
 	
 	public static OI getInstance(){
