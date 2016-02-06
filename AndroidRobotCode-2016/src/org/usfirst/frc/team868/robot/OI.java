@@ -50,16 +50,19 @@ public class OI {
 		initJoystick();
 	}
 	
-	Button shooterCommandIncrement, shooterCommandDecrement, shooterCommandStop;
+	Button shooterCommandIncrement, shooterCommandDecrement, shooterCommandStop,
+		   popperCommandToggle;
 	
 	public void initJoystick(){
 		shooterCommandIncrement = new JoystickButton(joystick, RobotMap.Buttons.Y);
 		shooterCommandDecrement = new JoystickButton(joystick, RobotMap.Buttons.A);
 		shooterCommandStop      = new JoystickButton(joystick, RobotMap.Buttons.RB);
+		popperCommandToggle     = new JoystickButton(joystick, RobotMap.Buttons.RT);
 		
 		shooterCommandIncrement.whenPressed(new ChangeShooterCommand(0.3));
 		shooterCommandDecrement.whenPressed(new ChangeShooterCommand(-0.3));
 		shooterCommandStop.whenPressed(new ShooterCommand(0));
+		popperCommandToggle.whenPressed(new PopperCommand());
 	}
 	
 	public static OI getInstance(){
