@@ -1,5 +1,8 @@
 package org.usfirst.frc.team868.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team868.robot.commands.*;
@@ -38,9 +41,24 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+	Joystick joystick;
 	
 	public OI(){
+		joystick = new Joystick(0);
+		
 		initSmartDashboard();
+	}
+	
+	Button shooterCommandIncrement, shooterCommandDecrement, shooterCommandStop;
+	
+	public void initJoystick(){
+		shooterCommandIncrement = new JoystickButton(joystick, 4);
+		shooterCommandDecrement = new JoystickButton(joystick, 2);
+		shooterCommandStop      = new JoystickButton(joystick, 6);
+		
+		shooterCommandIncrement.whenPressed(new ChangeShooterCommand(0.1));
+		shooterCommandDecrement.whenPressed(new ChangeShooterCommand(-0.1));
+		shooterCommandStop.whenPressed(new ShooterCommand(0));
 	}
 	
 	public static OI getInstance(){
