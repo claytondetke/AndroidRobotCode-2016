@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.command.Command;
 public class PopperCommand extends Command {
 	
 	private PopperSubsystem popper;
-	private boolean toggle;
 
     public PopperCommand() {
     	popper = PopperSubsystem.getInstance();
@@ -21,8 +20,7 @@ public class PopperCommand extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	toggle = !popper.getPosition();
-    	popper.setPopper(toggle);
+    	popper.setPopper(!popper.getPosition());
     	end();
     }
 

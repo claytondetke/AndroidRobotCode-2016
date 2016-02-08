@@ -54,7 +54,7 @@ public class OI {
 	Button shooterCommandIncrement, shooterCommandDecrement, shooterCommandStop,
 		   shooterCommandSet, collectorCommandUp,
 		   collectorCommandDown,
-		   stopperCommandToggle;
+		   stopperCommandToggle, popperCommandSetup;
 	
 	public void initJoysticks(){
 		new CollectorControllerCommand();
@@ -67,7 +67,8 @@ public class OI {
 		shooterCommandSet       = new JoystickButton(joystick, RobotMap.Buttons.B);
 		collectorCommandUp      = new JoystickButton(joystick, RobotMap.Buttons.LB);
 		collectorCommandDown    = new JoystickButton(joystick, RobotMap.Buttons.LT);
-		stopperCommandToggle     = new JoystickButton(joystick, RobotMap.Buttons.RT);
+		stopperCommandToggle    = new JoystickButton(joystick, RobotMap.Buttons.RT);
+		popperCommandSetup		= new JoystickButton(joystick, RobotMap.Buttons.X);
 		
 		shooterCommandIncrement.whenPressed(new ChangeShooterCommand(0.3));
 		shooterCommandDecrement.whenPressed(new ChangeShooterCommand(-0.3));
@@ -76,6 +77,7 @@ public class OI {
 		collectorCommandUp.whenPressed(new CollectorCommand(false));
 		collectorCommandDown.whenPressed(new CollectorCommand(true));
 		stopperCommandToggle.whenPressed(new StopperCommand());
+		popperCommandSetup.whenPressed(new PopperSetupCommand());
 	}
 	
 	public static OI getInstance(){
@@ -86,9 +88,7 @@ public class OI {
 	}
 	
 	public void initSmartDashboard(){
-		SmartDashboard.putData("Collector_Left_Joystick", new CollectorControllerCommand());
-		SmartDashboard.putData("Arcade_Drive", new ArcadeDriveCommand());
-		SmartDashboard.putData("Tank_Drive", new TankDriveCommand());
+		SmartDashboard.putData("Toggle_Popper", new PopperCommand());
 		SmartDashboard.putData("Toggle_Collector", new CollectorCommand());
 		SmartDashboard.putData("STOP_DRIVE", new DriveCommand(0));
 	}
