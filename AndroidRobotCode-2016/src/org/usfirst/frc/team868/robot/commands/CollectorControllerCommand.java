@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class CollectorControllerCommand extends Command {
-	
+	 
 	Joystick stick = new Joystick(RobotMap.Joystick.PORT_NUMBER);
 	private CollectorMotorSubsystem collect;
 	private double speed = 0;

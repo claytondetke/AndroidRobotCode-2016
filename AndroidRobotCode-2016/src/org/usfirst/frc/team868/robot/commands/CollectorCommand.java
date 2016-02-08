@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class CollectorCommand extends Command {
-	
+	 
 	public CollectorSubsystem collect;
 	private boolean toggling;
 	private boolean position;

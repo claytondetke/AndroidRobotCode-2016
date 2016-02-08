@@ -59,7 +59,7 @@ public class OI {
 	public void initJoysticks(){
 		new CollectorControllerCommand();
 	}
-	
+	 
 	public void initJoystick(){
 		shooterCommandIncrement = new JoystickButton(joystick, RobotMap.Buttons.Y);
 		shooterCommandDecrement = new JoystickButton(joystick, RobotMap.Buttons.A);

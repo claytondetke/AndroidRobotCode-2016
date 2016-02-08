@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
  *
  */
 public class PopperSetupCommand extends CommandGroup {
-	
+	 
     public  PopperSetupCommand() {
     	addSequential(new CollectorCommand(true));
     	addSequential(new WaitCommand(.09));
