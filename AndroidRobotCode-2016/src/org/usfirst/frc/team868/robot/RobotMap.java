@@ -44,10 +44,11 @@ public class RobotMap {
 	}
 	
 	public static class Joystick{
-		public static final int LEFT_HORIZONTAL_AXIS = 0;	//Right is positive, left is negative
-		public static final int LEFT_VERTICAL_AXIS = 1;		//Down is positive, up is negative
-		public static final int RIGHT_HORIZONTAL_AXIS = 2;	//Right is positive, left is negative
-		public static final int RIGHT_VERTICAL_AXIS = 3;	//Down is positive, up is negative
+		public static final int PORT_NUMBER = 0;
+		public static final int LEFT_X_AXIS = 0;	//Right is positive, left is negative
+		public static final int LEFT_Y_AXIS = 1;		//Down is positive, up is negative
+		public static final int RIGHT_X_AXIS = 2;	//Right is positive, left is negative
+		public static final int RIGHT_Y_AXIS = 3;	//Down is positive, up is negative
 	}
 	
     // For example to map the left and right motors, you could define the

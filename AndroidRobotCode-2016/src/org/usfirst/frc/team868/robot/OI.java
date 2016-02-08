@@ -44,16 +44,21 @@ public class OI {
 	Joystick joystick;
 	
 	public OI(){
-		joystick = new Joystick(0);
+		joystick = new Joystick(RobotMap.Joystick.PORT_NUMBER);
 		
 		initSmartDashboard();
 		initJoystick();
+		initJoysticks();
 	}
 	
 	Button shooterCommandIncrement, shooterCommandDecrement, shooterCommandStop,
 		   shooterCommandSet, collectorCommandUp,
 		   collectorCommandDown,
 		   stopperCommandToggle;
+	
+	public void initJoysticks(){
+		new CollectorControllerCommand();
+	}
 	
 	public void initJoystick(){
 		shooterCommandIncrement = new JoystickButton(joystick, RobotMap.Buttons.Y);
@@ -81,9 +86,10 @@ public class OI {
 	}
 	
 	public void initSmartDashboard(){
+		SmartDashboard.putData("Collector_Left_Joystick", new CollectorControllerCommand());
+		SmartDashboard.putData("Arcade_Drive", new ArcadeDriveCommand());
 		SmartDashboard.putData("Tank_Drive", new TankDriveCommand());
 		SmartDashboard.putData("Toggle_Collector", new CollectorCommand());
-		SmartDashboard.putData("Collector_Motor_Run", new CollectorCommand(.5));
 		SmartDashboard.putData("STOP_DRIVE", new DriveCommand(0));
 	}
 }

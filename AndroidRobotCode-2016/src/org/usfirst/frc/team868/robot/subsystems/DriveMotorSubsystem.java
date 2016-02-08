@@ -1,6 +1,7 @@
 package org.usfirst.frc.team868.robot.subsystems;
 
 import org.usfirst.frc.team868.robot.RobotMap;
+import org.usfirst.frc.team868.robot.commands.ArcadeDriveCommand;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -68,6 +69,7 @@ public class DriveMotorSubsystem extends Subsystem {
     }
     
 	protected void initDefaultCommand() {
+		setDefaultCommand(new ArcadeDriveCommand());
 	}
 }
 

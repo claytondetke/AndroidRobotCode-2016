@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class TankDriveCommand extends Command {
 	
-	Joystick tankDrive = new Joystick(0);
+	Joystick tankDrive = new Joystick(RobotMap.Joystick.PORT_NUMBER);
 	public DriveMotorSubsystem driveMotor;
 	public double leftSpeed = 0;
 	public double rightSpeed = 0;
@@ -30,8 +30,8 @@ public class TankDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	leftSpeed = -tankDrive.getRawAxis(RobotMap.Joystick.LEFT_VERTICAL_AXIS);
-    	rightSpeed = -tankDrive.getRawAxis(RobotMap.Joystick.RIGHT_VERTICAL_AXIS);
+    	leftSpeed = -tankDrive.getRawAxis(RobotMap.Joystick.LEFT_Y_AXIS);
+    	rightSpeed = -tankDrive.getRawAxis(RobotMap.Joystick.RIGHT_Y_AXIS);
     	driveMotor.setLeftPower(leftSpeed);
     	driveMotor.setRightPower(rightSpeed);
     }

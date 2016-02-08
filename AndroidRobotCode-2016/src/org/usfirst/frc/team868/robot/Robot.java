@@ -29,6 +29,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	BackShooterSubsystem.getInstance();
     	CollectorSubsystem.getInstance();
+    	CollectorMotorSubsystem.getInstance();
     	FrontShooterSubsystem.getInstance();
     	DriveMotorSubsystem.getInstance();
     	PopperSubsystem.getInstance();
@@ -39,6 +40,7 @@ public class Robot extends IterativeRobot {
     public void updateSmartDashboard(){
     	BackShooterSubsystem.getInstance().updateSmartDashboard();
     	CollectorSubsystem.getInstance().updateSmartDashboard();
+    	CollectorMotorSubsystem.getInstance().updateSmartDashboard();
     	FrontShooterSubsystem.getInstance().updateSmartDashboard();
     	DriveMotorSubsystem.getInstance().updateSmartDashboard();
     	PopperSubsystem.getInstance().updateSmartDashboard();
